@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+<!--=========================Action==================-->
+        <record id="action_1" model="ir.actions.act_window">
+            <field name="name">Test</field>
+            <field name="res_model">advansys.student</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="tree_view" model="ir.ui.view">
+            <field name="name">Advansys Project Tree View</field>
+            <field name="model">advansys.student </field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="name" string="Project Name"/>
+                </tree>
+
+            </field>
+        </record>
+
+
+
+        <!--==============Menu Item =================-->
+        <menuitem name="menuX" id="menu_root"/>
+        <menuitem name="Section" id="menu_sec1" parent="menu_root"/>
+        <menuitem name="Student" id="menu_stu" parent="menu_sec1"
+                  action="action_1"
+        />
+
+
+    </data>
+
+</odoo>

@@ -1,0 +1,253 @@
+<odoo>
+    <data>
+        <!--==========================Views================================-->
+        <!--Tree View  For Deaprtment-->
+        <record id="advansys_department_tree_view" model="ir.ui.view">
+            <field name="name">Advansys Dept Tree View</field>
+            <field name="model">advansys.department</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Department Name"/>
+                    <field name="desc" string=" Description"/>
+                </tree>
+
+            </field>
+        </record>
+        <!--Form View  For Department-->
+        <record id="advansys_department_form_view" model="ir.ui.view">
+            <field name="name">department Section</field>
+            <field name="model">advansys.department</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group name="Information">
+                        <field name="name" string="Department Name"/>
+                        <field name="desc" string="Description"/>
+                        <field name="employee_ids" string="Employees"/>
+
+                    </group>
+
+
+                </form>
+
+            </field>
+        </record>
+        <!--Tree View  For Employees-->
+        <record id="advansys_employee_tree_view" model="ir.ui.view">
+            <field name="name">Advansys Employees Tree View</field>
+            <field name="model">advansys.employee</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Employee Name"/>
+                    <field name="departmen_id" string="Department Name"/>
+                    <field name="project_ids" string="Projects"/>
+
+                    <field name="title" string="Employee Title"/>
+                    <field name="email"/>
+                    <field name="join_data"/>
+
+                </tree>
+
+            </field>
+        </record>
+        <!--Form View  For Employees-->
+        <record id="advansys_employee_form_view" model="ir.ui.view">
+            <field name="name">Employees Section</field>
+            <field name="model">advansys.employee</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group name="Information">
+                        <group>
+                            <field name="name" string="Employee Name"/>
+                            <field name="email"/>
+                            <field name="gender"/>
+                            <field name="salary" string="Computed Salary"/>
+                            <field name="title" string="Title"/>
+                        </group>
+                        <group>
+                            <field name="departmen_id" string="Department Name"
+
+                                domain="[
+                                ('desc','!=','False')
+                                ]"/>
+
+                            <field name="departmen_desc" string="about department"/>
+
+
+                            <field name="join_data"/>
+                            <field name="bio"/>
+
+                        </group>
+                    </group>
+
+                    <group name="projects">
+                        <field name="project_ids" string="Projects" widget="many2many_tags"/>
+                    </group>
+
+
+                    <notebook>
+                        <!--Tap-->
+                        <page String="Image">
+                            <field name="image" widget="image" options='{"preview_image":"image_medium"}'/>
+                        </page>
+
+                        <!--Tap-->
+                        <page String="Skills of Employees">
+                            <field name="employee_skill_level_id">
+                                <tree editable="bottom">
+                                    <field name="skill_id" string="Skill Name"/>
+
+                                    <field name="level" string="Level"/>
+                                </tree>
+                                <form>
+                                    <field name="skill_id" string="Skill Name"/>
+
+                                    <field name="level" string="Level"/>
+                                </form>
+
+                            </field>
+                        </page>
+
+
+                    </notebook>
+                </form>
+
+            </field>
+        </record>
+
+        <!--Projects-->
+        <!--Tree View  For Project-->
+        <record id="advansys_project_tree_view" model="ir.ui.view">
+            <field name="name">Advansys Project Tree View</field>
+            <field name="model">advansys.project</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Project Name"/>
+                    <field name="technology_used" string="Technology used"/>
+
+                </tree>
+
+            </field>
+        </record>
+        <!--Form View  For Project-->
+        <record id="advansys_project_form_view" model="ir.ui.view">
+            <field name="name">department Section</field>
+            <field name="model">advansys.project</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group name="Information">
+                        <field name="name" string="Project Name"/>
+
+                        <field name="technology_used" string="Technology used"/>
+                    </group>
+
+
+                </form>
+
+            </field>
+        </record>
+
+
+        <record id="advansys_student_tree_view" model="ir.ui.view">
+            <field name="name">Advansys student Tree View</field>
+            <field name="model">advansys.student</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Stu Name"/>
+                    <field name="gender" string="Stu gender"/>
+                </tree>
+
+            </field>
+        </record>
+
+        <record id="advansys_studen_form_view" model="ir.ui.view">
+            <field name="name">Advansys student form View</field>
+            <field name="model">advansys.student</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name" string="Stu Name"/>
+
+                        <field name="gender" string="Stu gender"/>
+                    </group>
+                </form>
+
+            </field>
+        </record>
+
+        <!--==========================Actions===========================-->
+        <record id="advansys_department_action" model="ir.actions.act_window">
+            <field name="name">Department Section</field>
+            <field name="res_model">advansys.department</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="advansys_employees_action" model="ir.actions.act_window">
+            <field name="name">Advansys Window</field>
+            <field name="res_model">advansys.employee</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="advansys_project_action" model="ir.actions.act_window">
+            <field name="name">Advansys Window</field>
+            <field name="res_model">advansys.project</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="advansys_skill_action" model="ir.actions.act_window">
+            <field name="name">Advansys Window</field>
+            <field name="res_model">advansys.skill</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="advansys_student_action" model="ir.actions.act_window">
+            <field name="name">Advansys Window</field>
+            <field name="res_model">advansys.student</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--==========================Menu Item===========================-->
+        <menuitem id="advansys_menu_root"
+                  name="Advansys"/>
+
+        <menuitem id="advansys_section_menu"
+                  parent="advansys_menu_root"
+                  name="Sections"/>
+        <!--Employee-->
+        <menuitem id="advansys_employee_menu"
+                  name="Employees"
+                  parent="advansys_section_menu"
+                  action="advansys_employees_action"/>
+        <!--skils-->
+        <menuitem id="advansys_skill_menu"
+                  name="Availble Skills"
+                  parent="advansys_section_menu"
+                  action="advansys_skill_action"/>
+
+        <!--Department-->
+        <menuitem id="iti_department_menu"
+                  name="Departments"
+                  parent="advansys_section_menu"
+                  action="advansys_department_action"/>
+
+        <!--Projects-->
+        <menuitem id="advansys_project_menu"
+                  name="Projects"
+                  parent="advansys_section_menu"
+                  action="advansys_project_action"/>
+
+
+        <menuitem id="advansys_Comunnity_menu"
+                  parent="advansys_menu_root"
+                  name="Advansys Community Work"/>
+        <!--Student-->
+        <menuitem id="advansys_student_menu"
+                  name="Student Courses"
+                  parent="advansys_Comunnity_menu"
+                  action="advansys_student_action"/>
+
+    </data>
+</odoo>
