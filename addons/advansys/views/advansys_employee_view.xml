@@ -10,11 +10,14 @@
 
 
         <!--=========================View==================-->
+
         <!--Tree View  For Employees-->
         <record id="advansys_employee_tree_view" model="ir.ui.view">
+
             <field name="name">Advansys Employees Tree View</field>
             <field name="model">advansys.employee</field>
             <field name="arch" type="xml">
+
                 <tree>
                     <field name="name" string="Employee Name"/>
                     <field name="departmen_id" string="Department Name"/>
@@ -64,11 +67,6 @@
 
 
                         <!--====================Action button================-->
-
-                        <button type="action"
-                                name="%(advansys_project_action)d"
-                                string="Open Available project"
-                                states="accepted"/>
 
 
                         <field name="state" string="Work flow" widget="statusbar"/>

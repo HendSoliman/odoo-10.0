@@ -40,8 +40,6 @@ class AdvansysEmployee(models.Model):
             'domain': {'departmen_id': domain}
         }
 
-
-
     name = fields.Char(string="Employee Name", required=True)
     salary = fields.Float(compute=_computed_salary)
     age = fields.Char(compute=_computed_age, readonly=True)
@@ -83,4 +81,6 @@ class AdvansysEmployee(models.Model):
 
     def change_state(self):
         new_state = self.env.context['state']
-        self.write({'state':new_state})
+        self.write({'state': new_state})
+
+
