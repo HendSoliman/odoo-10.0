@@ -1,35 +1,51 @@
 <odoo>
     <data>
-<!--=========================Action==================-->
-        <record id="action_1" model="ir.actions.act_window">
-            <field name="name">Test</field>
-            <field name="res_model">advansys.student</field>
+        <!--=========================Action==================-->
+    <record id="advansys_department_action" model="ir.actions.act_window">
+            <field name="name">Department Section</field>
+            <field name="res_model">advansys.department</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <record id="tree_view" model="ir.ui.view">
-            <field name="name">Advansys Project Tree View</field>
-            <field name="model">advansys.student </field>
+        <!--=========================View==================-->
+        <!--Tree View  For Deaprtment-->
+        <record id="advansys_department_tree_view" model="ir.ui.view">
+            <field name="name">Advansys Dept Tree View</field>
+            <field name="model">advansys.department</field>
             <field name="arch" type="xml">
-
                 <tree>
-                    <field name="name" string="Project Name"/>
+                    <field name="name" string="Department Name"/>
+                    <field name="desc" string=" Description"/>
                 </tree>
 
             </field>
         </record>
+        <!--Form View  For Department-->
+        <record id="advansys_department_form_view" model="ir.ui.view">
+            <field name="name">department Section</field>
+            <field name="model">advansys.department</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group name="Information">
+                        <field name="name" string="Department Name"/>
+                        <field name="desc" string="Description"/>
+                        <field name="employee_ids" string="Employees"/>
+
+                    </group>
 
 
+                </form>
+
+            </field>
+        </record>
 
         <!--==============Menu Item =================-->
-        <menuitem name="menuX" id="menu_root"/>
-        <menuitem name="Section" id="menu_sec1" parent="menu_root"/>
-        <menuitem name="Student" id="menu_stu" parent="menu_sec1"
-                  action="action_1"
-        />
-
-
+        <!--Department-->
+        <menuitem id="iti_department_menu"
+                  name="Departments"
+                  parent="advansys_section_menu"
+                  action="advansys_department_action"/>
     </data>
 
 </odoo>

@@ -26,10 +26,11 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',
+        'views/advansys_basic_view.xml',
         'views/advansys_employee_view.xml',
-        # 'views/advansys_department_view.xml',
-
+        'views/advansys_department_view.xml',
+        'views/advansys_project_view.xml',
+        'views/advansys_student_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+        <!--==========================Views================================-->
+
+
+        <!--==========================Actions===========================-->
+
+
+        <record id="advansys_skill_action" model="ir.actions.act_window">
+            <field name="name">Advansys Window</field>
+            <field name="res_model">advansys.skill</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="advansys_category_action" model="ir.actions.act_window">
+            <field name="name">Advansys Relations</field>
+            <field name="res_model">advansys.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="advansys_subcategory_action" model="ir.actions.act_window">
+            <field name="name">Advansys Relations</field>
+            <field name="res_model">advansys.subcategory</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--==========================Menu Item===========================-->
+        <menuitem id="advansys_menu_root"
+                  name="Advansys"/>
+
+        <menuitem id="advansys_section_menu"
+                  parent="advansys_menu_root"
+                  name="Sections"/>
+
+        <menuitem id="advansys_relation_menu"
+                  parent="advansys_menu_root"
+                  name="Relations"/>
+
+
+        <!--skils-->
+        <menuitem id="advansys_skill_menu"
+                  name="Availble Skills"
+                  parent="advansys_section_menu"
+                  action="advansys_skill_action"/>
+
+
+        <menuitem id="advansys_Comunnity_menu"
+                  parent="advansys_menu_root"
+                  name="Advansys Community Work"/>
+
+        <!--Relation-->
+        <menuitem id="advansys_category_menu"
+                  name="Category"
+                  parent="advansys_relation_menu"
+                  action="advansys_category_action"/>
+
+        <menuitem id="advansys_sub_category_menu"
+                  name="Sub Category"
+                  parent="advansys_relation_menu"
+                  action="advansys_subcategory_action"/>
+
+
+    </data>
+</odoo>

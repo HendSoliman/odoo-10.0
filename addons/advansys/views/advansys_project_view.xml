@@ -1,0 +1,54 @@
+<odoo>
+    <data>
+        <!--=========================Action==================-->
+        <record id="advansys_project_action" model="ir.actions.act_window">
+            <field name="name">Advansys Projects</field>
+            <field name="res_model">advansys.project</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--=========================View==================-->
+        <!--Projects-->
+        <!--Tree View  For Project-->
+        <record id="advansys_project_tree_view" model="ir.ui.view">
+            <field name="name">Advansys Project Tree View</field>
+            <field name="model">advansys.project</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Project Name"/>
+                    <field name="technology_used" string="Technology used"/>
+
+                </tree>
+
+            </field>
+        </record>
+        <!--Form View  For Project-->
+        <record id="advansys_project_form_view" model="ir.ui.view">
+            <field name="name">department Section</field>
+            <field name="model">advansys.project</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group name="Information">
+                        <field name="name" string="Project Name"/>
+
+                        <field name="technology_used" string="Technology used"/>
+                    </group>
+
+
+                </form>
+
+            </field>
+        </record>
+
+
+        <!--==============Menu Item =================-->
+        <!--Projects-->
+        <menuitem id="advansys_project_menu"
+                  name="Projects"
+                  parent="advansys_section_menu"
+                  action="advansys_project_action"/>
+
+    </data>
+
+</odoo>
