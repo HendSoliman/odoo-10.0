@@ -1,7 +1,7 @@
 <odoo>
     <data>
         <!--=========================Action==================-->
-    <record id="advansys_department_action" model="ir.actions.act_window">
+        <record id="advansys_department_action" model="ir.actions.act_window">
             <field name="name">Department Section</field>
             <field name="res_model">advansys.department</field>
             <field name="view_type">form</field>
@@ -28,6 +28,13 @@
             <field name="arch" type="xml">
                 <form>
                     <group name="Information">
+                        <header>
+
+                            <button type="object"
+                                    name="show_accpeted_employees"
+                                    string="show Idle employees"/>
+
+                        </header>
                         <field name="name" string="Department Name"/>
                         <field name="desc" string="Description"/>
                         <field name="employee_ids" string="Employees"/>
