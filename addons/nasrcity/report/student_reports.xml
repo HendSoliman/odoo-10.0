@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <report id="action_student_report"
+                string="Student Data"
+                model="iti.student"
+                report_type="qweb-pdf"
+                name="nasrcity.student_report"
+                file="nasrcity.student_report"
+                />
+    </data>
+</odoo>

@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <!-- === Services Page === -->
+        <template name="Services page" id="website.services" page="True">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class="container">
+                        <h1>Our Services</h1>
+                        <ul class="services">
+                            <li>
+                                <a href="#">Cloud Hosting</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                            <li>Unlimited space</li>
+                        </ul>
+
+
+                        <!-- === Snippets' area === -->
+                        <!--add an empty area that the user can fill with snippets-->
+                        <div class="oe_structure"/>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+
+        <!-- === Services MenuItem === -->
+        <record id="aboutUs_page_link" model="website.menu">
+            <field name="name">About us</field>
+            <field name="url">/page/about_us</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">99</field>
+        </record>   <!-- === Services MenuItem === -->
+
+        <!-- === Services MenuItem === -->
+        <record id="services_page_link" model="website.menu">
+            <field name="name">Services</field>
+            <field name="url">/page/services</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">99</field>
+        </record>
+    </data>
+</odoo>

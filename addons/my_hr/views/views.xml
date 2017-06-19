@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+
+        <!--Inherit Action-->
+        <record id="hr.open_view_employee_list_my" model="ir.actions.act_window">
+
+            <!--<field name="domain">[('id','=','1')]</field>-->
+
+            <field name="domain">[]</field>
+        </record>
+
+
+        <!--Inherir view -->
+      <!-- Employee -->
+        <record id="view_employee_form" model="ir.ui.view">
+            <field name="name">View For Military Field</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='work_location']" position="after">
+                   <field name="military_certificate"/>
+                </xpath>
+            </field>
+        </record>
+<menuitem
+            id="hr.menu_hr_root"
+            name="Custome Employees"/>
+
+    </data>
+</odoo>

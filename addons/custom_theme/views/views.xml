@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" custom_themerial.list">
+      <field name="nacustom_themerial list</field>
+      <field name="modcustom_themercustom_themerial</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" custom_themerial.action_window">
+      <field name="nacustom_themerial window</field>
+      <field name="res_modcustom_themercustom_themerial</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" custom_themerial.action_server">
+      <field name="nacustom_themerial server</field>
+      <field name="model_id" ref="model_theme_tutorial_theme_tutorial"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem nacustom_themerial" custom_themerial.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" custom_themerial.menu_1" parecustom_themerial.menu_root"/>
+    <menuitem name="Menu 2" custom_themerial.menu_2" parecustom_themerial.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" custom_themerial.menu_1_list" parecustom_themerial.menu_1"
+              acticustom_themerial.action_window"/>
+    <menuitem name="Server to list" custom_themerial" parecustom_themerial.menu_2"
+              acticustom_themerial.action_server"/>
+    -->
+  </data>
+</odoo>

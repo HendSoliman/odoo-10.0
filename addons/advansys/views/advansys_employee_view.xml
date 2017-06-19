@@ -77,9 +77,13 @@
 
                         <group name="Information">
                             <group>
-                                <field name="name" string="Employee Name"/>
+                                <!--<field name="name" placeholder="Employee's Name"/>-->
+                                 <field name="name" placeholder="Employee's Name"/>
+
                                 <field name="date_of_birth" String="Date of Birth"/>
                                 <field name="age" string="Computed Age"/>
+                                <field name="phone" string="Phone"/>
+                                <field name="address" string="Address"/>
                                 <field name="email"/>
                                 <field name="gender"/>
                                 <field name="salary" string="Computed Salary"/>
@@ -116,7 +120,8 @@
                         <notebook>
                             <!--Tap-->
                             <page String="Image">
-                                <field name="image" widget="image" options='{"preview_image":"image_medium"}'/>
+                                <field name="image" widget="image" class="oe_avatar"
+                                       options="{&quot;preview_image&quot;:&quot;image_medium&quot;}"/>
                             </page>
 
                             <!--Tap-->

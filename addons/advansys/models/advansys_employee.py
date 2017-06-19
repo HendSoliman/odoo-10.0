@@ -6,6 +6,10 @@ from dateutil.relativedelta import relativedelta
 
 from odoo import models, fields, api
 
+from odoo import api, fields, models
+from odoo import tools, _
+from odoo.exceptions import ValidationError
+from odoo.modules.module import get_module_resource
 
 class AdvansysEmployee(models.Model):
     _name = 'advansys.employee'
@@ -45,7 +49,6 @@ class AdvansysEmployee(models.Model):
     age = fields.Char(compute=_computed_age, readonly=True)
     email = fields.Char()
     title = fields.Char()
-    image = fields.Binary()
     gender = fields.Selection([
         ('m', 'Male'),
         ('f', 'Female'),
@@ -63,6 +66,8 @@ class AdvansysEmployee(models.Model):
         ('accepted', 'Accepted'),
     ], default='apply')
     military_status = fields.Char()
+    phone=fields.Char()
+    address=fields.Char()
 
     # Relations btw Employee & Department
     # ================Many2one
@@ -83,4 +88,24 @@ class AdvansysEmployee(models.Model):
         new_state = self.env.context['state']
         self.write({'state': new_state})
 
+    @api.model
+    def _default_image(self):
+        image_path = get_module_resource('advansys', 'static/src/img', 'default_image.png')
+        return tools.image_resize_image_big(open(image_path, 'rb').read().encode('base64'))
 
+    @api.model
+    def create(self, vals):
+        tools.image_resize_images(vals)
+        return super(AdvansysEmployee, self).create(vals)
+
+    # image: all image fields are base64 encoded and PIL-supported
+    image = fields.Binary("Photo", attachment=True,
+        help="This field holds the image used as photo for the employee, limited to 1024x1024px.")
+    image_medium = fields.Binary("Medium-sized photo", attachment=True,
+        help="Medium-sized photo of the employee. It is automatically "
+             "resized as a 128x128px image, with aspect ratio preserved. "
+             "Use this field in form views or some kanban views.")
+    image_small = fields.Binary("Small-sized photo", attachment=True,
+        help="Small-sized photo of the employee. It is automatically "
+             "resized as a 64x64px image, with aspect ratio preserved. "
+             "Use this field anywhere a small image is required.")

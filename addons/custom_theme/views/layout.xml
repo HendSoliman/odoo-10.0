@@ -1,0 +1,85 @@
+<odoo>
+    <data>
+
+        <!--===change logo===-->
+
+
+        <!-- Customize header  -->
+        <template id="custom_header" inherit_id="website.layout" name="Custom Header">
+            <!-- Assign an id  -->
+            <xpath expr="//div[@id='wrapwrap']/header" position="attributes">
+                <attribute name="id">my_header</attribute>
+            </xpath>
+            <!-- Assign class-->
+            <xpath expr="//div[@id='wrapwrap']/header//ul" position="attributes">
+                <attribute name="class">nav navbar-nav navbar-right menuItem</attribute>
+            </xpath>
+            <!-- Add an element after the top menu  -->
+            <xpath expr="//div[@id='wrapwrap']/header/div" position="after">
+                <div class="headerBanner text-center">
+                    <div class="container">
+
+                        <!-- Text Lead -->
+                        <h2 class="lead">Efficient Technology Solutions
+                        </h2>
+                        <h1>for Complex
+                            <span>Industrial Challenges</span>
+                        </h1>
+                        <!-- Text parag -->
+
+
+                        <h4>OUR GOAL IS .</h4>
+                        <!-- button -->
+
+
+                    </div>
+                </div>
+
+            </xpath>
+
+        </template>
+
+
+        <template id="custom_header2" inherit_id="website.layout_logo_show" name="Custom Header">
+            <!-- Add an element after the top menu  -->
+            <xpath expr="//div[@id='wrapwrap']/header/div/div/div//img" position="replace">
+
+                <img t-attf-src="/custom_theme/static/src/img/logo1.png" title="advansys-ESC"
+                     class="custome_logo" alt="advansys-ESC"/>
+
+            </xpath>
+
+        </template>
+
+
+        <template id="layout_footer_copyright2" inherit_id="website.layout_footer_copyright" name="Footer Copyright">
+            <xpath expr="//footer" position="replace">
+                <section class="footer center-block">
+                    <div class="container">
+
+                        <div class="SocialMediaIcon center-block ">
+                            <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                            <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+                            <i class="fa fa-google-plus fa-2x" aria-hidden="true"></i>
+                            <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+                        </div>
+
+                    </div>
+                    <div class="footer-copy">
+
+                        <div class="container text-center">
+                            <p>© 2017 DJX All rights reserved | Design by
+                                <a href="https://www.linkedin.com/in/hend-soliman-4241aa55/" target="blank">Hend
+                                    Soliman
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+            </xpath>
+        </template>
+
+
+    </data>
+</odoo>

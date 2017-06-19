@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <report id="action_employee_report"
+                string="employee Data"
+                model="advansys.employee"
+                report_type="qweb-pdf"
+                name="advansys.employee_report"
+                file="advansys.employee_report"
+        />
+    </data>
+</odoo>

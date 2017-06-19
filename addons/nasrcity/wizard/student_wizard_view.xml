@@ -1,0 +1,27 @@
+<odoo>
+    <record id="iti_wizard_form_view" model="ir.ui.view">
+            <field name="name">ITI wizard Form View</field>
+            <field name="model">student.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="from_date"/>
+                        <field name="to_date"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="iti_wizard_action" model="ir.actions.act_window">
+            <field name="name">ITI Student Wizard</field>
+            <field name="res_model">student.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="iti_student_wizard_menu"
+                  name="Students Wizard"
+                  parent="iti_data_menu"
+                  action="iti_wizard_action"/>
+</odoo>

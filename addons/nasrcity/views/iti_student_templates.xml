@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+        <template id="student_template">
+            <h1 t-esc="obj.age"/>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <template id="student_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <h2>Student Data</h2>
+                            <p>Student name is :
+                                <!--<span t-esc="new_var"/>-->
+                                <span t-field="o.name"/>
+                            </p>
+                             <p>Student Age:
+                                <!--<span t-esc="new_var"/>-->
+                                <span t-field="o.age"/>
+                            </p>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
