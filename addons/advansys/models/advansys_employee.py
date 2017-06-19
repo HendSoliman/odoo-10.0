@@ -77,7 +77,7 @@ class AdvansysEmployee(models.Model):
     # Relation btw Employee & project
     # ==================Many2many
     project_ids = fields.Many2many('advansys.project')
-    employee_skill_level_id = fields.One2many('advansys.employee.skill.level', 'employee_id')
+    employee_skill_level_ids = fields.One2many('advansys.employee.skill.level', 'employee_id')
 
     # context is an object used in environment and we can access its var during code
     """"def change_state(self):
