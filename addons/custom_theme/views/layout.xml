@@ -55,16 +55,17 @@
         <template id="layout_footer_copyright2" inherit_id="website.layout_footer_copyright" name="Footer Copyright">
             <xpath expr="//footer" position="replace">
                 <section class="footer center-block">
-                    <div class="container">
 
                         <div class="SocialMediaIcon center-block ">
+                              <div class="container">
+
                             <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
                             <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
                             <i class="fa fa-google-plus fa-2x" aria-hidden="true"></i>
                             <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+                              </div>
                         </div>
 
-                    </div>
                     <div class="footer-copy">
 
                         <div class="container text-center">
