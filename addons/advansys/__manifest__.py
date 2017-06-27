@@ -24,7 +24,7 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/res_groups.xml',
         'views/views.xml',
         'views/advansys_basic_view.xml',
         'views/advansys_employee_view.xml',
