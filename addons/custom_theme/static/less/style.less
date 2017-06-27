@@ -1,11 +1,9 @@
-.navbar-brand logo{
-    background: url(../img/logo.png) ;
 
+.customNavbar{
 
 }
 .custome_logo{
     margin:0px;
-
 }
 
 .navbar-default{
@@ -27,8 +25,8 @@
     }
     li:hover{
         background-color: #888888;
-        color:#fff;
-        border:solid 2px #ff8b38;
+        color:#97ce5d;
+        border:solid 2px #97ce5d;
         border-radius: 5px;
     }
 }
@@ -55,9 +53,7 @@
     }
 }
 /*
-.container{
-    border : solid 2px red;
-}*/
+
 .menuItem{
     font-size: 14px;
     font-weight: Bold;
@@ -71,13 +67,82 @@
     }
 }
 
+/*Carusel*/
+.loom img{
+width: 159px;
+    height: 201px;
+}
+  .leadText{ z-index: 5;
+    white-space: nowrap;
+    font-size: 48px;
+    line-height: 48px;
+    font-weight: 700;
+    color: rgb(132, 195, 65);
+    font-family: Poppins;
+    text-transform: uppercase;
+    visibility: inherit;
+    transition: none;
+    border-width: 0px;
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: 0px;
+    min-height: 0px;
+    min-width: 0px;
+    max-height: none;
+    max-width: none;
+    opacity: 1;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    transform-origin: 50% 50% 0px;
+
+    span{
+    color:#fff;}
+        }
+
+
+.loom{
+ background: transparent; /*No background*/
+position:absolute;
+left: 200px;
+top:180px;
+}
+
+.loom2{
+ background: transparent; /*No background*/
+position:absolute;
+left: 200px;
+top:180px;
+}
+ .rightCap{
+    white-space: nowrap;
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    transition: none;
+    border-width: 0px;
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: 0px;
+    min-height: 0px;
+    min-width: 0px;
+    max-height: none;
+    max-width: none;
+    opacity: 1;
+    align:left;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    transform-origin: 50% 50% 0px;}
+/*End Carusel*/
+
+
+
+
 /*Footer Section*/
 .footer{
     background-color: #575451;
-    /*padding: 50px;*/
+    /*padding: 100px;*/
     width: 100%;
     margin: auto;
-    padding-top:20px;
     }
 .SocialMediaIcon{
 float: none;
@@ -99,6 +164,21 @@ text-align:center;
 .SocialMediaIcon   .fa-twitter:hover{
     color: #1da1f2;
 }
+.carouselCustom{
+    width: 100%;
+    background-size: cover;
+    padding:0px;
+    img{
+    z-index:20;
+    }
+}
+.carousel-captionCutom{
+    background-color: rgba(81,95,104, .2);
+
+}
+
+
+
 
 .SocialMediaIcon   .fa-google-plus:hover{
     color: #dd4b39;
@@ -107,26 +187,4 @@ text-align:center;
     color: #e1306c;
 }
 
-.headerBanner{
-    /*background-color: black;*/
-    background-image: url(../src/img/banner3.jpg) ;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    /*View port hight*/
-    background-size: cover;
-    position: relative;
-    top: 0px;
-    left:0px;
-    width:100%;
-    color: white;
-    padding-top: 150px;
-    padding-bottom: 40px;
-    min-height:650px;
-    /*text-transform: uppercase;*/
-    span{
-        color:#ff9b51;
-    }
-}
 

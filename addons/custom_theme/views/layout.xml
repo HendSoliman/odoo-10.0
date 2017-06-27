@@ -11,28 +11,92 @@
                 <attribute name="id">my_header</attribute>
             </xpath>
             <!-- Assign class-->
+            <xpath expr="//div[@id='wrapwrap']/header/div" position="attributes">
+                <attribute name="class">navbar navbar-default navbar-fixed-top customNavbar</attribute>
+            </xpath>
+            <!-- Assign class-->
             <xpath expr="//div[@id='wrapwrap']/header//ul" position="attributes">
                 <attribute name="class">nav navbar-nav navbar-right menuItem</attribute>
             </xpath>
             <!-- Add an element after the top menu  -->
             <xpath expr="//div[@id='wrapwrap']/header/div" position="after">
-                <div class="headerBanner text-center">
-                    <div class="container">
+                <!--</div>-->
+                <div class="carouselCustom text-center">
 
-                        <!-- Text Lead -->
-                        <h2 class="lead">Efficient Technology Solutions
-                        </h2>
-                        <h1>for Complex
-                            <span>Industrial Challenges</span>
-                        </h1>
-                        <!-- Text parag -->
-
-
-                        <h4>OUR GOAL IS .</h4>
-                        <!-- button -->
+                    <!--Carousel-->
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
 
 
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner carousel-captionCutom" role="listbox">
+
+                            <!--========================================================================================-->
+                            <div class="item active text-center">
+                                <img src="https://i1.wp.com/advansys-esc.com/wp-content/uploads/2016/11/Slider-background.png"
+                                     alt="..."></img>
+                                <div class="carousel-caption">
+                                    <h1 class="leadText">lets work together</h1>
+                                </div>
+                                <div class="loom">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <img src="https://i2.wp.com/advansys-esc.com/wp-content/uploads/2016/11/Mechanical-Loom.png"
+                                                 alt="..."/>
+
+
+                                        </div>
+
+                                        <div class="rightCap">
+                                            First
+                                                <br/>
+                                                Mechanical
+                                                <br/>Loom
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!--========================================================================================-->
+
+                            <div class="item text-center">
+                                <img src="https://i1.wp.com/advansys-esc.com/wp-content/uploads/2016/11/Slider-background.png"
+                                     alt="..."></img>
+                                <div class="carousel-caption">
+                                    <h1 class="leadText">lets work together</h1>
+                                </div>
+                            </div>
+                            <div class="item text-center">
+                                <img src="https://i1.wp.com/advansys-esc.com/wp-content/uploads/2016/11/Slider-background.png"
+                                     alt="..."></img>
+                                <div class="carousel-caption">
+                                    <h1 class="leadText">lets work together</h1>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button"
+                           data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button"
+                           data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
+                    <!--End Carousel-->
+
                 </div>
 
             </xpath>
@@ -56,20 +120,20 @@
             <xpath expr="//footer" position="replace">
                 <section class="footer center-block">
 
-                        <div class="SocialMediaIcon center-block ">
-                              <div class="container">
+                    <div class="SocialMediaIcon center-block ">
+                        <div class="container">
 
                             <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
                             <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
                             <i class="fa fa-google-plus fa-2x" aria-hidden="true"></i>
                             <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-                              </div>
                         </div>
+                    </div>
 
                     <div class="footer-copy">
 
                         <div class="container text-center">
-                            <p>© 2017 DJX All rights reserved | Design by
+                            <p>© 2017 Advansys All rights reserved | Design by
                                 <a href="https://www.linkedin.com/in/hend-soliman-4241aa55/" target="blank">Hend
                                     Soliman
                                 </a>

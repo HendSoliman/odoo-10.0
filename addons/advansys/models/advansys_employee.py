@@ -22,37 +22,16 @@ class AdvansysEmployee(models.Model):
         image_path = get_module_resource('advansys', 'static/src/img', 'default_image.png')
         return tools.image_resize_image_big(open(image_path, 'rb').read().encode('base64'))
 
-        # Fields declaration
-        name = fields.Char(string="Employee Name", required=True)
-        salary = fields.Float(compute=_computed_salary)
-        age = fields.Char(compute=_computed_age, readonly=True)
-        email = fields.Char()
-        title = fields.Char()
-        gender = fields.Selection([
-            ('m', 'Male'),
-            ('f', 'Female'),
-        ], default='m')
-        join_data = fields.Date(required=True)
-        date_of_birth = fields.Date(default=fields.Date.context_today)
-        is_accepted = fields.Boolean()
-        bio = fields.Html()
-        state = fields.Selection([
-            ('apply', 'Applied'),
-            ('iq', 'Passed IQ'),
-            ('tech', 'Passed Technical'),
-            ('rejected', 'rejected'),
-            ('accepted', 'Accepted'),
-        ], default='apply')
-        military_status = fields.Char()
-        phone = fields.Char()
-        address = fields.Char()
+    @api.depends('gender')
+    def _computed_salary(self):
+        for record in self:
+            if self.gender == 'm':
+                self.salary = 5000
+            else:
+                self.salary = 8000
 
-        # Relations
-        departmen_id = fields.Many2one('advansys.department')
-        departmen_desc = fields.Text(related='departmen_id.desc', store=True, readonly=True)
 
-        project_ids = fields.Many2many('advansys.project')
-        employee_skill_level_ids = fields.One2many('advansys.employee.skill.level', 'employee_id')
+
 
     # compute and search fields
     # To compute Age Automatically
@@ -66,13 +45,42 @@ class AdvansysEmployee(models.Model):
         rd = relativedelta(d2, d1)
         rec.age = str(rd.years) + ' years\t' + str(rd.months) + 'months'
 
-    @api.depends('gender')
-    def _computed_salary(self):
-        for record in self:
-            if self.gender == 'm':
-                self.salary = 5000
-            else:
-                self.salary = 8000
+
+
+
+
+
+            # Fields declaration
+
+    name = fields.Char(string="Employee Name", required=True)
+    salary = fields.Float(compute=_computed_salary)
+    age = fields.Char(compute=_computed_age, readonly=True)
+    email = fields.Char()
+    title = fields.Char()
+    gender = fields.Selection([
+        ('m', 'Male'),
+        ('f', 'Female'),
+    ], default='m')
+    join_data = fields.Date(required=True)
+    date_of_birth = fields.Date(default=fields.Date.context_today)
+    is_accepted = fields.Boolean()
+    bio = fields.Html()
+    state = fields.Selection([
+        ('apply', 'Applied'),
+        ('iq', 'Passed IQ'),
+        ('tech', 'Passed Technical'),
+        ('rejected', 'rejected'),
+        ('accepted', 'Accepted'),
+    ], default='apply')
+    military_status = fields.Char()
+    phone = fields.Char()
+    address = fields.Char()
+    # Relations
+    departmen_id = fields.Many2one('advansys.department')
+    departmen_desc = fields.Text(related='departmen_id.desc', store=True, readonly=True)
+
+    project_ids = fields.Many2many('advansys.project')
+    employee_skill_level_ids = fields.One2many('advansys.employee.skill.level', 'employee_id')
 
     # Constraints and onchanges
     @api.onchange('gender')

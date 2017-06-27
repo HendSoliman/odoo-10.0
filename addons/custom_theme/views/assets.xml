@@ -6,6 +6,11 @@
                 <link href="/custom_theme/static/less/style.less" rel="stylesheet" type="text/less"/>
             </xpath>
         </template>
-
+        <template id="mystylefont" name="My style" inherit_id="website.assets_frontend">
+            <xpath expr="link[last()]" position="after">
+                <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet"/>
+                <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"/>
+            </xpath>
+        </template>
     </data>
 </odoo>

@@ -160,7 +160,7 @@
 
 
                                                         <t t-foreach="o.employee_skill_level_id" t-as="i">
-                                                            <li>
+                                                            <li>`
                                                                 <t t-esc="i.skill_id.name"/>
                                                             </li>
                                                         </t>
