@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': [],
 
     # always loaded
     'data': [
@@ -31,7 +31,7 @@
         'views/advansys_department_view.xml',
         'views/advansys_project_view.xml',
         'views/advansys_student_view.xml',
-        'views/advansys_employee_report.xml',
+        'report/advansys_employee_report.xml',
         'report/employee_reports.xml',
     ],
     # only loaded in demonstration mode

@@ -74,15 +74,26 @@
 
                     </header>
                     <sheet>
+                        <field name="image" widget="image" class="oe_avatar"
+                               options="{&quot;preview_image&quot;:&quot;image_medium&quot;}"/>
 
-                        <group name="Information">
+  <div class="oe_title">
+                                <label for="name" class="oe_edit_only"/>
+                                <h1>
+                                    <field name="name" placeholder="Employee's Name"/>
+                                </h1>
+                            </div>
+                        <group name="Information" string="General Information">
+
                             <group>
+
                                 <!--<field name="name" placeholder="Employee's Name"/>-->
-                                 <field name="name" placeholder="Employee's Name"/>
+                                <!--<field name="name" placeholder="Employee's Name"/>-->
 
                                 <field name="date_of_birth" String="Date of Birth"/>
                                 <field name="age" string="Computed Age"/>
                                 <field name="phone" string="Phone"/>
+
                                 <field name="address" string="Address"/>
                                 <field name="email"/>
                                 <field name="gender"/>
@@ -111,20 +122,13 @@
 
                             </group>
                         </group>
-
+                        <separator string="projects"/>
                         <group name="projects">
                             <field name="project_ids" string="Projects" widget="many2many_tags"/>
                         </group>
 
-
+                        <!--Tap-->
                         <notebook>
-                            <!--Tap-->
-                            <page String="Image">
-                                <field name="image" widget="image" class="oe_avatar"
-                                       options="{&quot;preview_image&quot;:&quot;image_medium&quot;}"/>
-                            </page>
-
-                            <!--Tap-->
                             <page String="Skills of Employees">
                                 <field name="employee_skill_level_ids">
                                     <tree editable="bottom">

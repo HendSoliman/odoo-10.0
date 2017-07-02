@@ -6,7 +6,10 @@ from dateutil.relativedelta import relativedelta
 from odoo import models, fields, api
 
 
+
+# for Customization of the Report
 class AdvansysEmployee(models.AbstractModel):
+    # Convension
     _name = 'report.advansys.employee_report'
 
     @api.model

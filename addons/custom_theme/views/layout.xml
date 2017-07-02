@@ -12,7 +12,7 @@
             </xpath>
             <!-- Assign class-->
             <xpath expr="//div[@id='wrapwrap']/header/div" position="attributes">
-                <attribute name="class">navbar navbar-default navbar-fixed-top customNavbar</attribute>
+                <attribute name="class">navbar navbar-default customNavbar</attribute>
             </xpath>
             <!-- Assign class-->
             <xpath expr="//div[@id='wrapwrap']/header//ul" position="attributes">

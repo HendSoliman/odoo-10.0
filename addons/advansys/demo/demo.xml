@@ -26,5 +26,11 @@
         <!--     <field name="value">40</field> -->
         <!--   </record> -->
         <!--  -->
+        <record id="base.main_company" model="res.company">
+            <field name="name">Advansys</field>
+            <field name="partner_id" ref="main_partner"/>
+            <field name="rml_header1">Advansys-ESC</field>
+            <field name="currency_id" ref="base.EUR"/>
+        </record>
     </data>
 </odoo>

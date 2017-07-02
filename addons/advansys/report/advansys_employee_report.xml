@@ -1,6 +1,10 @@
 <odoo>
     <data>
-        <template id="assets_common" name="advansys assets" inherit_id="report.assets_common">
+
+        <!--&lt;!&ndash;Call css or other script files &ndash;&gt;-->
+        <template id="assets_common"
+                  name="advansys assets"
+                  inherit_id="report.assets_common">
 
             <xpath expr="." position="inside">
 
@@ -9,10 +13,14 @@
             </xpath>
 
         </template>
+
+        <!--Design your Report -->
         <template id="employee_report">
             <t t-call="report.html_container">
                 <t t-foreach="docs" t-as="o">
+                    <!--Call default Header and Footer-->
                     <t t-call="report.external_layout">
+
                         <div class="page pageStyle">
 
                             <div id="wrapper">
@@ -31,7 +39,6 @@
                                                           style="
                                                                 width: 153px;
                                                                 padding: 10px;
-                                                                border: red 2px solid;
                                                                 float: left;"
                                                           t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}"/>
                                                 </div>
@@ -41,6 +48,7 @@
                                                 <div class="self">
                                                     <h1 class="name">
                                                         <span t-field="o.name"/>
+
                                                         <br/>
                                                         <span t-field="o.title"/>
                                                     </h1>
@@ -83,7 +91,8 @@
                                                         </li>
                                                         <li>
                                                             <a class='north' href="#" title="My Facebook Profile">
-                                                                <img src="/advansys/static/src/img/icn-facebook.jpg" alt="F"/>
+                                                                <img src="/advansys/static/src/img/icn-facebook.jpg"
+                                                                     alt="F"/>
                                                             </a>
                                                         </li>
                                                     </ul>
@@ -159,8 +168,8 @@
                                                     <ul class="skills">
 
 
-                                                        <t t-foreach="o.employee_skill_level_id" t-as="i">
-                                                            <li>`
+                                                        <t t-foreach="o.employee_skill_level_ids" t-as="i">
+                                                            <li>
                                                                 <t t-esc="i.skill_id.name"/>
                                                             </li>
                                                         </t>
@@ -255,9 +264,11 @@
                             </div>
                             <!-- End Wrapper -->
                         </div>
+
                     </t>
                 </t>
             </t>
         </template>
+
     </data>
 </odoo>
