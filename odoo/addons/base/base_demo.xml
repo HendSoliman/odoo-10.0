@@ -34,7 +34,7 @@
         </record>
 
         <record id="main_company" model="res.company">
-            <field name="name">YourCompany</field>
+            <field name="name">Advansys</field>
         </record>
 
         <record id="user_demo" model="res.users">
@@ -48,16 +48,16 @@
         </record>
 
         <record model="res.partner" id="base.partner_root">
-            <field name="company_name">YourCompany</field>
-            <field name="street">215 Vine St</field>
+            <field name="company_name">Advansys</field>
+            <field name="street">AlLasilki S</field>
             <field name="city">Scranton</field>
-            <field name="zip">18503</field>
+            <field name="zip">11435</field>
             <field name='country_id' ref='base.us'/>
             <field name='state_id' ref='state_us_39'/>
-            <field name="phone">+1 555-555-5555</field>
-            <field name="email">admin@yourcompany.example.com</field>
-            <field name="tz">Europe/Brussels</field>
-            <field name="image" type="base64" file="base/static/img/partner_root-image.jpg"/>
+            <field name="phone">202 270 571 50 </field>
+            <field name="email">  info@advansys-esc.com</field>
+            <field name="tz">Egypt</field>
+            <field name="image" type="base64" file="base/static/img/logo.png"/>
         </record>
 
     </data>
