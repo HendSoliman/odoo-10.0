@@ -9,8 +9,9 @@ class AdvansysProject(models.Model):
      desc=fields.Text()
      technology_used=fields.Text()
 
-     # employee_project_ids = fields.Many2many('advansys.employee', 'project_ids')
-
+     employee_ids = fields.Many2many('advansys.employee')
+     # , 'project_ids'
+     employee_contact = fields.Char(related='employee_ids.phone', store=True, readonly=True)
 
      #     value = fields.Integer()
 #     value2 = fields.Float(compute="_value_pc", store=True)
