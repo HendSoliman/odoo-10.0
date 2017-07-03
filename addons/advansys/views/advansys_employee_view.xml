@@ -5,12 +5,57 @@
             <field name="name">Advansys Window</field>
             <field name="res_model">advansys.employee</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
         </record>
-
-
         <!--=========================View==================-->
 
+
+        <!-- employee kanban view specifically for hr_attendance (to check in/out) -->
+        <record model="ir.ui.view" id="custom_module_kanban_view">
+            <field name="name">custom.module.kanban</field>
+            <field name="model">advansys.employee</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban class="o_hr_employee_kanban">
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="phone"/>
+                    <field name="title"/>
+
+
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('advansys.employee', 'image_medium', record.id.value)"/>
+                                </div>
+
+                                <!--=========Detail==================-->
+                                <div class="oe_kanban_details">
+                                    <strong>
+                                        <field name="name"/>
+                                    </strong>
+                                    <ul>
+                                        <li>
+                                            <field name="title"/>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-envelope"/>
+                                            <field name="email"/>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-phone"/>
+                                            <field name="phone"/>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
         <!--Tree View  For Employees-->
         <record id="advansys_employee_tree_view" model="ir.ui.view">
 
@@ -77,12 +122,12 @@
                         <field name="image" widget="image" class="oe_avatar"
                                options="{&quot;preview_image&quot;:&quot;image_medium&quot;}"/>
 
-  <div class="oe_title">
-                                <label for="name" class="oe_edit_only"/>
-                                <h1>
-                                    <field name="name" placeholder="Employee's Name"/>
-                                </h1>
-                            </div>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" placeholder="Employee's Name"/>
+                            </h1>
+                        </div>
                         <group name="Information" string="General Information">
 
                             <group>
