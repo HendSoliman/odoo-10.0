@@ -5,8 +5,8 @@ from odoo import models, fields, api
 
 class AdvansysDepartment(models.Model):
     _name = 'advansys.department'
-
-    name = fields.Char(required=True)
+    _rec_name = 'department_name'
+    department_name = fields.Char(required=True)
     desc = fields.Text()
 
     # Relation according to employee

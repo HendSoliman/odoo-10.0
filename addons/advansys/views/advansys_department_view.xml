@@ -15,7 +15,7 @@
             <field name="model">advansys.department</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="name" string="Department Name"/>
+                    <field name="department_name" string="Department Name"/>
                     <field name="desc" string=" Description"/>
                 </tree>
 
@@ -35,7 +35,7 @@
                                     string="show Idle employees"/>
 
                         </header>
-                        <field name="name" string="Department Name"/>
+                        <field name="department_name" string="Department Name"/>
                         <field name="desc" string="Description"/>
                         <field name="employee_ids" string="Employees"/>
 

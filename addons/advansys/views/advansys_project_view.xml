@@ -33,6 +33,11 @@
                         <field name="name" string="Project Name"/>
 
                         <field name="technology_used" string="Technology used"/>
+
+                    </group>
+                    <group name="EmpInformation">
+                        <field name="employee_ids" string="Emplayee Phone  "/>
+
                     </group>
 
 
