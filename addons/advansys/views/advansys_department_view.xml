@@ -5,10 +5,46 @@
             <field name="name">Department Section</field>
             <field name="res_model">advansys.department</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">kanban,tree,form</field>
         </record>
 
         <!--=========================View==================-->
+
+        <!-- Department kanban view specifically for hr_attendance (to check in/out) -->
+        <record model="ir.ui.view" id="Dept_module_kanban_view">
+            <field name="name">custom.module.kanban</field>
+            <field name="model">advansys.department</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban class="o_hr_employee_kanban">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('advansys.department', 'image_medium', record.id.value)"/>
+                                </div>
+
+                                <!--=========Detail==================-->
+                                <div class="oe_kanban_details">
+                                    <strong>
+                                        <field name="department_name"/>
+                                    </strong>
+                                    <ul>
+                                        <li>
+                                            <field name="desc"/>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
         <!--Tree View  For Deaprtment-->
         <record id="advansys_department_tree_view" model="ir.ui.view">
             <field name="name">Advansys Dept Tree View</field>
@@ -26,22 +62,41 @@
             <field name="name">department Section</field>
             <field name="model">advansys.department</field>
             <field name="arch" type="xml">
-                <form>
-                    <group name="Information">
-                        <header>
+                <form string="Test">
+                    <sheet>
+                        <field name="image" widget='image' class="oe_avatar"
+                               options='{"preview_image":"image_medium"}'/>
+                        <div class="oe_title">
+                            <label for="Department Name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="department_name" placeholder="Department Name"/>
+                            </h1>
+                        </div>
+                        <notebook>
+                            <page string="about Department Description">
+                                <group string="Service Name">
+                                    <field name="desc" type="html"/>
+                                      <field name="no_employee" class="oe_inline"/>
+                                </group>
 
-                            <button type="object"
-                                    name="show_accpeted_employees"
-                                    string="show Idle employees"/>
+                            </page>
+                            <page string="Employees">
+                                <group string="Employees ">
+                                    <field name="employee_ids" type="html"/>
 
-                        </header>
-                        <field name="department_name" string="Department Name"/>
-                        <field name="desc" string="Description"/>
-                        <field name="employee_ids" string="Employees"/>
+                                </group>
+                                <label for="no_employee" class="oe_edit_only"/>
+                                <h2>
+                                    <!--<field name="no_employee" class="oe_inline"/>-->
+                                    <!--<field name="company_currency" class="oe_inline oe_edit_only"/>-->
+                                    <!--at-->
+                                    <!--<field name="probability" class="oe_inline"/>-->
+                                    <!--% success rate-->
+                                </h2>
+                            </page>
 
-                    </group>
-
-
+                        </notebook>
+                    </sheet>
                 </form>
 
             </field>
