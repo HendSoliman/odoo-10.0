@@ -1,0 +1,114 @@
+<odoo>
+    <data>
+        <!--=========================Action==================-->
+        <record id="advansysTms_department_action" model="ir.actions.act_window">
+            <field name="name">Department Section</field>
+            <field name="res_model">advansystms.department</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+        <!--=========================View==================-->
+
+        <!-- Department kanban view specifically for hr_attendance (to check in/out) -->
+        <record model="ir.ui.view" id="Dept_module_kanban_view">
+            <field name="name">custom.module.kanban</field>
+            <field name="model">advansystms.department</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban class="o_hr_employee_kanban">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+
+
+                                <!--=========Detail==================-->
+                                <div class="oe_kanban_details">
+                                    <strong>
+                                        <field name="department_name"/>
+                                    </strong>
+                                    <ul>
+                                        <li>
+                                            <field name="department_code"/>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!--Tree View  For Deaprtment-->
+        <record id="advansys_department_tree_view" model="ir.ui.view">
+            <field name="name">Advansys Dept Tree View</field>
+            <field name="model">advansystms.department</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="department_name" string="Department Name"/>
+                    <field name="department_code" string="Department Code"/>
+                    <field name="description" string="Department Discription"/>
+
+                </tree>
+
+            </field>
+        </record>
+        <!--Form View  For Department-->
+        <record id="advansys_department_form_view" model="ir.ui.view">
+            <field name="name">department Section</field>
+            <field name="model">advansystms.department</field>
+            <field name="arch" type="xml">
+                <form string="Test">
+                    <sheet>
+
+                        <div class="oe_title">
+                            <label for="Department Name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="department_name" placeholder="Department Name"/>
+                            </h1>
+                                <field name="department_code" placeholder="Department Code"/>
+
+                        </div>
+                        <notebook>
+                            <page string="about Department Description">
+                                <group string="Service Name">
+                                    <field name="description" type="html"/>
+                                      <field name="no_employee" class="oe_inline"/>
+                                </group>
+
+                            </page>
+
+                            <page string="Employees"   attrs="{'invisible': [('no_employee', '=', '0')]}">
+                                <group string="Employees ">
+                                    <field name="employee_ids" type="html"/>
+
+                                </group>
+                                <label for="no_employee" class="oe_edit_only"/>
+                                <h2>
+                                    <!--<field name="no_employee" class="oe_inline"/>-->
+                                    <!--<field name="company_currency" class="oe_inline oe_edit_only"/>-->
+                                    <!--at-->
+                                    <!--<field name="probability" class="oe_inline"/>-->
+                                    <!--% success rate-->
+                                </h2>
+                            </page>
+
+                        </notebook>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <!--==============Menu Item =================-->
+        <!--Department-->
+        <menuitem id="advansysTms_department_menu"
+                  name="Departments"
+                  parent="advansystms_HR_menuSection"
+                  action="advansysTms_department_action"/>
+    </data>
+
+</odoo>

@@ -1,0 +1,28 @@
+<odoo>
+    <record id="advansysTms_wizard_form_view" model="ir.ui.view">
+        <field name="name">advansystms wizard Form View</field>
+        <field name="model">advansystms.employee.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="type_code"/>
+                    <field name="type_title"/>
+                    <field name="description"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="advansysTms_wizard_action" model="ir.actions.act_window">
+        <field name="name">advansystms Student Wizard</field>
+        <field name="res_model">advansystms.employee.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="advansystms_employeeTMS_wizard_menu"
+              name="Advansystms Wizard"
+              parent="advansystms_HR_menuSection"
+              action="advansysTms_wizard_action"/>
+</odoo>
