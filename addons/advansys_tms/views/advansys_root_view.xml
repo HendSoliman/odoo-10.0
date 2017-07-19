@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+
+
+        <!--Root-->
+        <menuitem id="advansystms_menu_root"
+                  name="TMS"/>
+
+
+        <!--Category Menu Section-->
+        <menuitem id="advansystms_category_menuSection"
+                  parent="advansystms_menu_root"
+                  name="Courses_categories"/>
+
+
+        <!--Courses  Menu Section-->
+        <menuitem id="advansystms_courses_menuSection"
+                  parent="advansystms_menu_root"
+                  name="Courses"/>
+
+        <!--Human Resource  Menu Section-->
+        <menuitem id="advansystms_HR_menuSection"
+                  parent="advansystms_menu_root"
+                  name="Managment Employee"/>
+
+
+    </data>
+</odoo>

@@ -2,8 +2,8 @@
   <data>
      <record id="department_1" model="advansys.department">
 
-      <field name="name">Software Department</field>
-      <field name="desc">Software Description</field>
+      <field name="name">R and D Department</field>
+      <field name="desc">R and D Description</field>
     </record>
     <!-- explicit list view definition -->
     <!--

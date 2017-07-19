@@ -19,7 +19,7 @@ class AdvansysEmployee(models.Model):
     # Default Methods
     @api.model
     def _default_image(self):
-        image_path = get_module_resource('advansys', 'static/src/img', 'default_image.png')
+        image_path = get_module_resource('advansys', 'static/src/img')
         return tools.image_resize_image_big(open(image_path, 'rb').read().encode('base64'))
 
     @api.depends('gender')
@@ -43,15 +43,26 @@ class AdvansysEmployee(models.Model):
         d1 = datetime.strptime(dt, "%Y-%m-%d").date()
         d2 = date.today()
         rd = relativedelta(d2, d1)
+        # if rd.years< 20:
+        #     raise ValidationError("Your record is too old: %s" ,rd.years)
+        # else:
+        #     print '************',str(rd.years)
         rec.age = str(rd.years) + ' years\t' + str(rd.months) + 'months'
 
 
 
+    @api.depends('join_data')
+    def _computed_years(self):
+        for rec in self:
+            dt = rec.join_data
+            d1 = datetime.strptime(dt, "%Y-%m-%d").date()
+            d2 = date.today()
+            rd = relativedelta(d2, d1)
+            rec.no_years_at_company = str(rd.years) + ' years\t' + str(rd.months) + 'months'
 
 
 
             # Fields declaration
-
     name = fields.Char(string="Employee Name", required=True)
     salary = fields.Float(compute=_computed_salary)
     age = fields.Char(compute=_computed_age, readonly=True)
@@ -62,6 +73,7 @@ class AdvansysEmployee(models.Model):
         ('f', 'Female'),
     ], default='m')
     join_data = fields.Date(required=True)
+    no_years_at_company = fields.Char(compute=_computed_years)
     date_of_birth = fields.Date(default=fields.Date.context_today)
     is_accepted = fields.Boolean()
     bio = fields.Html()
@@ -92,6 +104,17 @@ class AdvansysEmployee(models.Model):
         return {
             'domain': {'departmen_id': domain}
         }
+
+    # #constraints
+    # @api.one
+    # @api.constrains('age')
+    # def _check_something(self):
+    #     for record in self:
+    #         if record.age > 40:
+    #             print 'Raise Errro ****************'
+    #             raise ValidationError("Your record is too old: %s" % record.age)
+
+
 
     # CRUD methods (and name_get, name_search, ...) overrides
     @api.model

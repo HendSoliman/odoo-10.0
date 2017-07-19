@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--=========================Action==================-->
+        <record id="advansysTms_employee_action" model="ir.actions.act_window">
+            <field name="name">Employee Section</field>
+            <field name="res_model">advansystms.employee</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+        <!-- Employee -->
+        <record id="view_advansysTMS_employee_form" model="ir.ui.view">
+            <field name="name">advansysTMS.employee.form</field>
+            <field name="model">advansystms.employee</field>
+            <field name="arch" type="xml">
+                <form string="Employee">
+                    <sheet>
+                        <field name="image" widget='image' class="oe_avatar"
+                               options='{"preview_image":"image_medium"}'/>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" placeholder="Employee's Name"/>
+                            </h1>
+                        </div>
+
+                        <notebook>
+                            <page name="public" string="Public Information">
+                                <group>
+                                    <group string="Contact Information">
+                                        <field name="middle_name"/>
+                                        <field name="last_name"/>
+                                        <field name="email" widget="email"/>
+                                        <field name="phone"/>
+                                        <field name="employee_number"/>
+                                    </group>
+                                    <group string="Position">
+                                        <field name="department_id"/>
+                                        <field name="employee_type_id"  widget="selection" string="Employee Type" options='{"no_open": True,"no_create": 1, "no_create_edit": 1}'/>
+                                        <field name="employee_type_title"/>
+                                        <field name="job_description"/>
+                                        <field name="position_title"/>
+                                        <field name="supervisor_id"/>
+                                    </group>
+                                </group>
+                                <field name="notes" placeholder="Other Information ..." colspan="4"/>
+                            </page>
+                            <page name="personal_information" string="Personal Information">
+
+                                <group string="Hire Date">
+                                    <field name="employee_hiring_date"/>
+
+                                    <field name="employee_termination_date"/>
+                                </group>
+
+                            </page>
+
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_employee_tree" model="ir.ui.view">
+            <field name="name">advansysTms.employee.tree</field>
+            <field name="model">advansystms.employee</field>
+            <field name="arch" type="xml">
+                <tree string="Employees">
+                    <field name="name"/>
+                    <field name="employee_number"/>
+                    <field name="email"/>
+                    <field name="department_id"/>
+                    <field name="supervisor_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_kanban_view_employees" model="ir.ui.view">
+            <field name="name">advansystms.employee.kanban</field>
+            <field name="model">advansystms.employee</field>
+            <field name="priority">10</field>
+            <field name="arch" type="xml">
+                <kanban class="o_hr_employee_kanban">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('advansystms.employee', 'image_medium', record.id.value)"/>
+                                </div>
+
+                                <!--=========Detail==================-->
+                                <div class="oe_kanban_details">
+                                    <strong>
+                                        <field name="name"/>
+                                    </strong>
+                                    <ul>
+                                        <li>
+                                            <field name="employee_number"/>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-envelope"/>
+                                            <field name="email"/>
+                                        </li>
+                                        <li>
+                                            <!--<label >Department</label>-->
+                                            <i class="fa fa-puzzle-piece" aria-hidden="true"></i>
+                                            <field name="department_id"/>
+                                        </li>
+                                        <li>
+                                            <field name="position_title"/>
+
+                                        </li>
+
+                                        <li>
+                                            <i class="fa fa-phone"/>
+                                            <field name="phone"/>
+                                        </li>
+
+
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+
+            </field>
+        </record>
+
+
+        <menuitem
+                action="advansysTms_employee_action"
+                id="advansysTms_Employee"
+                parent="advansystms_HR_menuSection"/>
+
+    </data>
+</odoo>
