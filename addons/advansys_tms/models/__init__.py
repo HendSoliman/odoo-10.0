@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from . import models
-from . import advansysTMS_category
+from . import advansysTMS_cat
 from . import advansysTMS_course
 from . import advansysTMS_course_version
 from . import advansysTMS_department

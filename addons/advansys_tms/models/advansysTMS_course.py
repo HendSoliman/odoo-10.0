@@ -21,7 +21,7 @@ class AdvansysTMSCourse(models.Model):
      notes=fields.Text()
      # attachment = fields.Binary()
 
-     category_id=fields.Many2one('advansystms.category' ,required=True)
+     category_id=fields.Many2one('advansystms.cat' ,required=True)
 
      # departmen_desc = fields.Text(related='departmen_id.desc', store=True, readonly=True)
 

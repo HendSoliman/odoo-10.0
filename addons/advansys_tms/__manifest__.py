@@ -28,11 +28,11 @@
         'views/views.xml',
         'views/templates.xml',
         'views/advansys_root_view.xml',
-        'views/advansys_category_view.xml',
         'views/advansys_course_view.xml',
         'views/advansys_employee_view.xml',
         'views/advansys_department_view.xml',
         'wizard/advansysTMS_employee_type_view.xml',
+        'views/advansys_cat_view.xml',
         # 'report/advansysTMS_category_report_views.xml',
         # 'report/category_reports.xml',
 
