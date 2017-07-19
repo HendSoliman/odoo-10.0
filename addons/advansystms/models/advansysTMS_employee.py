@@ -13,7 +13,7 @@ class AdvansysTMSEmployee(models.Model):
     _name = "advansystms.employee"
     _description = "Employee"
 
-    name = fields.Char(string="Employee First Name")
+    name = fields.Char(string="Employee First Name" , required=True)
     middle_name = fields.Char(string="Employee middle Name")
     last_name = fields.Char(string="Employee Last Name")
     employee_number = fields.Char(string="Employee Number")
@@ -39,7 +39,7 @@ class AdvansysTMSEmployee(models.Model):
 
     @api.model
     def _default_image(self):
-        image_path = get_module_resource('advansys_tms', 'static/src/img')
+        image_path = get_module_resource('advansystms', 'static/src/img')
         return tools.image_resize_image_big(open(image_path, 'rb').read().encode('base64'))
 
     # image: all image fields are base64 encoded and PIL-supported

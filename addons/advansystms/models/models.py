@@ -3,7 +3,7 @@
 from odoo import models, fields, api
 
 # class advansys_tms(models.Model):
-#     _name = 'advansys_tms.advansys_tms'
+#     _name = 'advansystms.advansystms'
 
 #     name = fields.Char()
 #     value = fields.Integer()

@@ -1,15 +1,19 @@
 <odoo>
     <data>
-        <template id="student_report">
+        <template id="report_category">
             <t t-call="report.html_container">
-                <t t-call="report.external_layout">
+
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+
                         <div class="page">
                             <h2>Report title</h2>
-                            <p>This object's name is
-                                <span t-esc="new_var"/>
+                            <p>
+                                <span t-field="o.name"/>
                             </p>
                         </div>
                     </t>
+                </t>
             </t>
         </template>
     </data>

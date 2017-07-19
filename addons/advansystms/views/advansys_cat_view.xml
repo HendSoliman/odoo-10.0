@@ -104,7 +104,6 @@
                                     <field name="course_ids" type="html"/>
 
                                 </group>
-                                <label for="number_of_courses" class="oe_edit_only"/>
                                 <h2>
                                     <!--<field name="no_employee" class="oe_inline"/>-->
                                     <!--<field name="company_currency" class="oe_inline oe_edit_only"/>-->
