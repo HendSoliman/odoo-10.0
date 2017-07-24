@@ -9,9 +9,8 @@ class StudentReport(models.AbstractModel):
 
         students = self.env['iti.student'].browse(docids)
 
-
         new_args = {
-            'new_var': students.name,
+            'new_var': 'Hello',
             'docs': students
         }
         return report_obj.render(

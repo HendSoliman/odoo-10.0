@@ -29,6 +29,7 @@
         'views/advansys_basic_view.xml',
         'views/advansys_employee_view.xml',
         'views/advansys_department_view.xml',
+        'views/advansys_skills_view.xml',
         'views/advansys_project_view.xml',
         'views/advansys_student_view.xml',
         'report/advansys_employee_report.xml',

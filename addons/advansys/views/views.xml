@@ -1,64 +1,16 @@
 <odoo>
-  <data>
-     <record id="department_1" model="advansys.department">
+    <data>
+        <record id="department_1" model="advansys.department">
 
-      <field name="name">R and D Department</field>
-      <field name="desc">R and D Description</field>
-    </record>
-    <!-- explicit list view definition -->
-    <!--
-    <record model="ir.ui.view" id="advansys.list">
-      <field name="name">advansys list</field>
-      <field name="model">advansys.advansys</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
-    </record>
-    -->
+            <field name="department_name">HR Department</field>
+            <field name="desc">R and D Description</field>
+        </record>
 
-    <!-- actions opening views on models -->
-    <!--
-    <record model="ir.actions.act_window" id="advansys.action_window">
-      <field name="name">advansys window</field>
-      <field name="res_model">advansys.advansys</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    -->
-
-    <!-- server action to the one above -->
-    <!--
-    <record model="ir.actions.server" id="advansys.action_server">
-      <field name="name">advansys server</field>
-      <field name="model_id" ref="model_advansys_advansys"/>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
-        }
-      </field>
-    </record>
-    -->
-
-    <!-- Top menu item -->
-    <!--
-    <menuitem name="advansys" id="advansys.menu_root"/>
-    -->
-    <!-- menu categories -->
-    <!--
-    <menuitem name="Menu 1" id="advansys.menu_1" parent="advansys.menu_root"/>
-    <menuitem name="Menu 2" id="advansys.menu_2" parent="advansys.menu_root"/>
-    -->
-    <!-- actions -->
-    <!--
-    <menuitem name="List" id="advansys.menu_1_list" parent="advansys.menu_1"
-              action="advansys.action_window"/>
-    <menuitem name="Server to list" id="advansys" parent="advansys.menu_2"
-              action="advansys.action_server"/>
-    -->
-  </data>
+        <!--=========================Action==================-->
+        <template id="assets_backend" name="advansys assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/advansys/static/less/formsStyle.css"/>
+            </xpath>
+        </template>
+    </data>
 </odoo>

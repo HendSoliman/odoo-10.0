@@ -2,9 +2,9 @@
   <data>
     <!-- explicit list view definition -->
     <!--
-    <record model="ir.ui.view" id="advansys_tms.list">
+    <record model="ir.ui.view" advansysTms_tms.list">
       <field name="name">advansysTMS list</field>
-      <field name="model">advansys_tms.advansys_tms</field>
+      <field name="modadvansysTms_advansysTms_tms</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -17,9 +17,9 @@
 
     <!-- actions opening views on models -->
     <!--
-    <record model="ir.actions.act_window" id="advansys_tms.action_window">
+    <record model="ir.actions.act_window" advansysTms_tms.action_window">
       <field name="name">advansysTMS window</field>
-      <field name="res_model">advansys_tms.advansys_tms</field>
+      <field name="res_modadvansysTms_advansysTms_tms</field>
       <field name="view_mode">tree,form</field>
     </record>
     -->
@@ -45,15 +45,15 @@
     -->
     <!-- menu categories -->
     <!--
-    <menuitem name="Menu 1" id="advansys_tms.menu_1" parent="advansys_tms.menu_root"/>
-    <menuitem name="Menu 2" id="advansys_tms.menu_2" parent="advansys_tms.menu_root"/>
+    <menuitem name="Menu 1" advansysTms_tms.menu_1" pareadvansysTms_tms.menu_root"/>
+    <menuitem name="Menu 2" advansysTms_tms.menu_2" pareadvansysTms_tms.menu_root"/>
     -->
     <!-- actions -->
     <!--
-    <menuitem name="List" id="advansys_tms.menu_1_list" parent="advansys_tms.menu_1"
-              action="advansys_tms.action_window"/>
-    <menuitem name="Server to list" id="advansys_tms" parent="advansys_tms.menu_2"
-              action="advansys_tms.action_server"/>
+    <menuitem name="List" advansysTms_tms.menu_1_list" pareadvansysTms_tms.menu_1"
+              actiadvansysTms_tms.action_window"/>
+    <menuitem name="Server to list" advansysTms_tms" pareadvansysTms_tms.menu_2"
+              actiadvansysTms_tms.action_server"/>
     -->
   </data>
 </odoo>

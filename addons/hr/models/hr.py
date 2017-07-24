@@ -136,7 +136,7 @@ class Employee(models.Model):
     work_location = fields.Char('Work Location')
     notes = fields.Text('Notes')
     parent_id = fields.Many2one('hr.employee', string='Manager')
-    category_ids = fields.Many2many('hr.employee.category', 'employee_category_rel', 'emp_id', 'category_id', string='Tags')
+    category_ids = fields.Many2many('hr.employee.category', 'employee_category_rel', 'emp_id', 'category_id', )
     child_ids = fields.One2many('hr.employee', 'parent_id', string='Subordinates')
     resource_id = fields.Many2one('resource.resource', string='Resource',
         ondelete='cascade', required=True, auto_join=True)

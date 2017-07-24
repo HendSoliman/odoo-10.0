@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "advansysTMS",
+    'name': "advansystms",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -33,8 +33,10 @@
         'views/advansys_department_view.xml',
         'wizard/advansysTMS_employee_type_view.xml',
         'views/advansys_cat_view.xml',
-        # 'report/advansysTMS_category_report_views.xml',
-        # 'report/category_reports.xml',
+        'report/category_report.xml',
+        'views/advansysTms_category_report_views.xml',
+        'views/advansys_assignment_view.xml',
+
 
     ],
     # only loaded in demonstration mode

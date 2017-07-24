@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <report id="advansystms.action_category_report"
+                string="Category  Data"
+                model="advansystms.cat"
+                report_type="qweb-pdf"
+                name="advansystms.report_category"
+                file="category_report"/>
+    </data>
+</odoo>

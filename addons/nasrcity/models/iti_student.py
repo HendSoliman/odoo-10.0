@@ -41,7 +41,7 @@ class ItiStudent(models.Model):
 
     @api.constrains('age')
     def check_age(self):
-        if self.age > 80:
+        if self.age > 20:
             raise ValidationError('Hello')
         return True
 

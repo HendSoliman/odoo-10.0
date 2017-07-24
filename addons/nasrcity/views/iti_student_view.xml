@@ -25,7 +25,10 @@
                                 string="Pass IQ"
                                 states="apply"
                                 context="{'state': 'iq'}"/>
-
+                        <button type="action"
+                                name="%(iti_track_action)d"
+                                string="Open Tracks"
+                                states="iq"/>
                         <field name="state" widget="statusbar"/>
                     </header>
                     <sheet>
@@ -34,7 +37,9 @@
                                 <field name="name"/>
                                 <field name="age"/>
                                 <field name="track_id"
-                                       attrs="{'invisible': [('age', '>', 25)], }"
+                                       attrs="{
+                                   'invisible': [('age', '>', 25)],
+                                   }"
                                        string="My Track"/>
                                 <field name="track_desc"/>
                             </group>

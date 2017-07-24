@@ -5,7 +5,7 @@ from odoo import models, fields, api
 class AdvansysTMSCourse(models.Model):
      _name = 'advansystms.cat'
 
-     name=fields.Char()
+     name=fields.Char(required=True)
      status = fields.Selection([
           ('active', 'Active'),
           ('Inactive', 'Inactive'),

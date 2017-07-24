@@ -74,7 +74,7 @@ blockquote, q {
 
 body {
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	background-color: #e1e0db;
+	/*background-color: #e1e0db;*/
 	background-image: url(../img/bg.jpg);
 	background-repeat: repeat;
 	font-size:13px;
@@ -751,4 +751,12 @@ label.error {
 	font-weight: normal;
 	margin-left:80px;
 	width:238px;
+}
+
+
+.skillView{
+ font-size: 24px;
+    color: #154734;
+    border: 3px solid #009A44;
+    font-weight: bold;
 }

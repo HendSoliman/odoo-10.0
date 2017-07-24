@@ -1,0 +1,146 @@
+<odoo>
+    <data>
+        <!--=========================Action==================-->
+
+        <record id="advansys_skill_action" model="ir.actions.act_window">
+            <field name="name">Advansys Window</field>
+            <field name="res_model">advansys.skill</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+        <!--=========================View==================-->
+
+        <!-- Department kanban view specifically for hr_attendance (to check in/out) -->
+        <!--<record model="ir.ui.view" id="Dept_module_kanban_view">-->
+        <!--<field name="name">custom.module.kanban</field>-->
+        <!--<field name="model">advansys.department</field>-->
+        <!--<field name="type">kanban</field>-->
+        <!--<field name="arch" type="xml">-->
+        <!--<kanban class="o_hr_employee_kanban">-->
+        <!--<templates>-->
+        <!--<t t-name="kanban-box">-->
+        <!--<div class="oe_kanban_global_click">-->
+        <!--<div class="o_kanban_image">-->
+        <!--<img t-att-src="kanban_image('advansys.department', 'image_medium', record.id.value)"/>-->
+        <!--</div>-->
+
+        <!--&lt;!&ndash;=========Detail==================&ndash;&gt;-->
+        <!--<div class="oe_kanban_details">-->
+        <!--<strong>-->
+        <!--<field name="department_name"/>-->
+        <!--</strong>-->
+        <!--<ul>-->
+        <!--<li>-->
+        <!--<field name="desc"/>-->
+        <!--</li>-->
+
+        <!--</ul>-->
+
+        <!--</div>-->
+        <!--</div>-->
+        <!--</t>-->
+        <!--</templates>-->
+        <!--</kanban>-->
+        <!--</field>-->
+        <!--</record>-->
+
+
+        <!--Tree View  For Deaprtment-->
+        <record id="advansys_department_tree_view" model="ir.ui.view">
+            <field name="name">skill Tree View</field>
+            <field name="model">advansys.skill</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Skill Name"/>
+                    <field name="desc" string=" Description"/>
+                </tree>
+
+            </field>
+        </record>
+        <!--Form View  For Department-->
+        <record id="advansys_Skill_form_view" model="ir.ui.view">
+            <field name="name">Skill Section</field>
+            <field name="model">advansys.skill</field>
+            <field name="arch" type="xml">
+                <form>
+
+                    <group>
+
+                        <field name="blue" string="Blue"/>
+
+                        <p style="color:green;margin:0;font-weight:bold/* write your css instead of my example*/">
+                            <field name="status"/>
+
+                        </p>
+                        <!--<field name="pink" attrs="{'invisible': [('blue','=',True),('yellow','=',True)]}"/>-->
+
+                        <!--<field name="yellow" attrs="{'invisible': [('pink','=',True),('blue','=',True)]}"/>-->
+
+                    </group>
+                    <form>
+
+                        <group>
+
+                            <field name="name"/>
+
+                            <field name="desc"/>
+                        </group>
+
+                    </form>
+
+                </form>
+
+            </field>
+        </record>
+
+        <!-- Department kanban view specifically for hr_attendance (to check in/out) -->
+        <record model="ir.ui.view" id="Dept_module_kanban_view">
+            <field name="name">custom.module.kanban</field>
+            <field name="model">advansys.skill</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban class="o_hr_employee_kanban">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+
+
+                                <!--=========Detail==================-->
+                                <div class="oe_kanban_details">
+                                    <strong>
+                                        <field name="name"/>
+                                    </strong>
+                                    <ul>
+                                        <li>
+                                            <field name="desc"/>
+                                        </li>
+                                        <li>
+                                            <field name="blue"/>
+                                        </li>
+                                        <li>
+                                            <field name="status" string="Status" style="color:green"/>
+                                        </li>
+
+
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!--==============Menu Item =================-->
+
+        <!--skils-->
+        <menuitem id="advansys_skill_menu"
+                  name="Availble Skills"
+                  parent="advansys_section_menu"
+                  action="advansys_skill_action"/>
+
+    </data>
+
+</odoo>
