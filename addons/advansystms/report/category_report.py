@@ -12,4 +12,7 @@ class ParticularReport(models.AbstractModel):
             'new_var': categories.name,
             'docs': categories
         }
-        return report_obj.render('advansystms.report_category', docargs)
+        return report_obj.render\
+            ('advansystms.report_category', docargs)
+          #ValueError: External ID not found in the system: advansystm.report_category
+    # will be rais if this name does not match report name

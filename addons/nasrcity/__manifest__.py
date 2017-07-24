@@ -11,6 +11,6 @@
         'views/iti_student_templates.xml',
         'views/iti_student_report_views.xml',
         'wizard/student_wizard_view.xml',
-        'report/student_reports.xml',
+        'report/category_report.xml',
     ]
 }

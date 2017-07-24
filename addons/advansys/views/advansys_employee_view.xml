@@ -123,9 +123,7 @@
 
 
                         <!--====================Action button================-->
-
-
-                        <field name="state" string="Work flow" widget="statusbar"/>
+               <field name="state" string="Work flow" widget="statusbar"/>
 
 
                     </header>
@@ -151,7 +149,7 @@
                                 <field name="phone" string="Phone"/>
 
                                 <field name="address" string="Address"/>
-                                <field name="email"/>
+                                <field name="email" placeholder="name@advansys-esc.com"/>
                                 <field name="gender"/>
                                 <field name="salary" string="Computed Salary"/>
                                 <field name="title" string="Title"/>
@@ -180,7 +178,7 @@
                         </group>
                         <separator string="projects"/>
                         <group name="projects">
-                            <field name="project_ids" string="Projects" widget="many2many_tags"/>
+                            <field name="project_ids" string="Projects" />
                         </group>
 
                         <!--Tap-->

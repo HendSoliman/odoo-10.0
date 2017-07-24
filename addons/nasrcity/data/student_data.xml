@@ -4,10 +4,5 @@
             <field name="name">Ali</field>
             <field name="age">15</field>
         </record>
-        <record id="student_2" model="iti.student">
-            <field name="name">Hend</field>
-            <field name="age">25</field>
-        </record>
-
     </data>
 </odoo>

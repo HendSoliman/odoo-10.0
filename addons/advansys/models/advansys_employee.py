@@ -1,15 +1,11 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime, date
-
-import dateutil
 from dateutil.relativedelta import relativedelta
-
-from odoo import models, fields, api
-
 from odoo import api, fields, models
 from odoo import tools, _
 from odoo.exceptions import ValidationError
 from odoo.modules.module import get_module_resource
+import re
 
 
 class AdvansysEmployee(models.Model):
@@ -105,16 +101,14 @@ class AdvansysEmployee(models.Model):
             'domain': {'departmen_id': domain}
         }
 
-    # #constraints
-    # @api.one
-    # @api.constrains('age')
-    # def _check_something(self):
-    #     for record in self:
-    #         if record.age > 40:
-    #             print 'Raise Errro ****************'
-    #             raise ValidationError("Your record is too old: %s" % record.age)
-
-
+    @api.constrains('email')
+    def _validate_Email(self):
+        match = re.search(r"(^[a-zA-Z0-9_.+-]+@[advansys]+-esc+\.[a-zA-Z0-9.]*\.*[com|org|edu]{3}$)", self.email)
+        #match=re.search(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9.]*\.*[com|org|edu]{3}$)",self.email)
+        if match:
+            return 'Valid email.'
+        else:
+            raise ValidationError("Email must fit this Template :  name@advansys-esc.com")
 
     # CRUD methods (and name_get, name_search, ...) overrides
     @api.model

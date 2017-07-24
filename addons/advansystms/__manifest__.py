@@ -35,6 +35,8 @@
         'views/advansys_cat_view.xml',
         'report/category_report.xml',
         'views/advansysTms_category_report_views.xml',
+        'views/advansys_assignment_view.xml',
+
 
     ],
     # only loaded in demonstration mode
