@@ -95,6 +95,7 @@
                 <form>
                     <header>
 
+ <!--clickable="True"-->
                         <button type="object"
                                 name="change_state"
                                 string="Pass IQ"
