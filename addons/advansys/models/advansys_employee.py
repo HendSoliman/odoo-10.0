@@ -5,7 +5,6 @@ from odoo import api, fields, models
 from odoo import tools, _
 from odoo.exceptions import ValidationError
 from odoo.modules.module import get_module_resource
-import re
 
 
 class AdvansysEmployee(models.Model):
@@ -100,15 +99,6 @@ class AdvansysEmployee(models.Model):
         return {
             'domain': {'departmen_id': domain}
         }
-
-    @api.constrains('email')
-    def _validate_Email(self):
-        match = re.search(r"(^[a-zA-Z0-9_.+-]+@[advansys]+-esc+\.[a-zA-Z0-9.]*\.*[com|org|edu]{3}$)", self.email)
-        #match=re.search(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9.]*\.*[com|org|edu]{3}$)",self.email)
-        if match:
-            return 'Valid email.'
-        else:
-            raise ValidationError("Email must fit this Template :  name@advansys-esc.com")
 
     # CRUD methods (and name_get, name_search, ...) overrides
     @api.model
