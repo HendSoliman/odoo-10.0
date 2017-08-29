@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import base64
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
 from odoo import api, fields, models
@@ -106,6 +107,7 @@ class AdvansysEmployee(models.Model):
         tools.image_resize_images(vals)
         return super(AdvansysEmployee, self).create(vals)
 
+
     # Action methods
     # Business methods
     # context is an object used in environment and we can access its var during code
@@ -128,3 +130,31 @@ class AdvansysEmployee(models.Model):
                                 help="Small-sized photo of the employee. It is automatically "
                                      "resized as a 64x64px image, with aspect ratio preserved. "
                                      "Use this field anywhere a small image is required.")
+
+ #Barcode
+    barcode_image = fields.Text(
+        string='Barcode image',
+        compute='_compute_barcode_image',
+    )
+
+    # @api.one
+    # def _compute_barcode_image(self):
+    #         try:
+    #             barcode = self.env['report'].barcode(
+    #                 'EAN13',
+    #                 self.person_id.ean13,
+    #                 width=300,
+    #                 height=50,
+    #                 humanreadable=0
+    #             )
+    #         except (ValueError, AttributeError):
+    #             raise Warning(_('Cannot convert into barcode.'))
+    #         barcode_base64 = base64.b64encode(barcode)
+    #         self.barcode_image = 'data:image/png;base64,' + barcode_base64
+    #     else:
+    #         self.barcode_image = None
+
+
+
+
+

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import http
 
+
 class Advansys(http.Controller):
     @http.route('/advansys/advansys/', auth='public')
     def index(self, **kw):

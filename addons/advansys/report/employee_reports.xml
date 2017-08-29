@@ -3,11 +3,12 @@
         <!--only name - model and report typr are mandatory -->
         <report name="advansys.employee_report"
                 model="advansys.employee"
-                report_type="qweb-pdf"
+                report_type="qweb-html"
                 id="action_employee_report"
                 string="employee Data"
                 file="advansys.employee_report"
         />
+
     </data>
 </odoo>
 

@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+
+        <record id="new_id_record" model="ititi.employee">
+            <field name="name">Hend</field>
+
+        </record>
+    </data>
+</odoo>

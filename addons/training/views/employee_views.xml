@@ -1,0 +1,163 @@
+<odoo>
+    <data>
+        <record id="training_employee_action_window" model="ir.actions.act_window">
+            <field name="name">Training Window</field>
+            <field name="res_model">training.employee</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+
+        <record id="training_course_action_window" model="ir.actions.act_window">
+            <field name="name">Training Window</field>
+            <field name="res_model">training.course</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="training_department_action_window" model="ir.actions.act_window">
+            <field name="name">Training Window</field>
+            <field name="res_model">training.department</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <!--Tree view for employees -->
+        <record id="tree_view_employee" model="ir.ui.view">
+            <field name="name">Employees Tree View</field>
+            <field name="model">training.employee</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="gender"/>
+                    <field name="salary"/>
+                    <field name="job_title"/>
+
+                </tree>
+            </field>
+
+        </record>
+
+        <!--Form View  For Employees-->
+        <record id="training_employee_form_view" model="ir.ui.view">
+            <field name="name">Employee Form View</field>
+            <field name="model">training.employee</field>
+            <field name="arch" type="xml">
+
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" string="NAme" placeholder="Employee's Name"/>
+                            </h1>
+                        </div>
+
+                        <group>
+                            <group>
+                                <field name="job_title" String="Job"/>
+                                <field name="age"/>
+                                <field name="gender"/>
+                                <field name="department_id"/>
+                            </group>
+                         <separator string="XXX"/>
+                            <group>
+                                <field name="salary"/>
+                                <field name="hire_date"/>
+                                <field name="notes"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page>
+                                <field name="bio"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <!-- kanban view Employee -->
+        <record model="ir.ui.view" id="employee_module_kanban_view">
+            <field name="name">Kanban View</field>
+            <field name="model">training.employee</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban class="o_hr_employee_kanban">
+                    <field name="name"/>
+                    <!--<field name="email"/>-->
+                    <!--<field name="phone"/>-->
+                    <!--<field name="title"/>-->
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <!--=========Detail==================-->
+                                <div class="oe_kanban_details">
+                                    <strong>
+                                        <field name="name"/>
+                                    </strong>
+                                    <ul>
+                                        <li>
+                                            <field name="job_title"/>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-envelope"/>
+                                            <field name="gender"/>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+
+                </kanban>
+            </field>
+        </record>
+
+
+        <!-- server action to the one above -->
+        <!--
+        <record model="ir.actions.server" id="training.action_server">
+          <field name="name">training server</field>
+          <field name="model_id" ref="model_training_training"/>
+          <field name="code">
+            action = {
+              "type": "ir.actions.act_window",
+              "view_mode": "tree,form",
+              "res_model": self._name,
+            }
+          </field>
+        </record>
+        -->
+
+        <!-- Top menu item -->
+
+        <menuitem name="training" id="training.menu_root"/>
+
+        <!-- menu categories -->
+
+        <menuitem name="HR" id="training_hr_section" parent="training.menu_root"/>
+
+
+        <menuitem name="Employee" id="training_menu_employee"
+                  parent="training_hr_section"
+                  action="training_employee_action_window"/>
+
+        <menuitem name="Course" id="training_menu_course"
+                  parent="training_hr_section"
+                  action="training_course_action_window"/>
+
+        <menuitem name="Department" id="aaa_departments"
+                  parent="training_hr_section"
+                  action="training_department_action_window"/>
+
+        <!--<menuitem name="Menu 2" id="training.menu_2" parent="training.menu_root"/>-->
+        <!-- actions -->
+        <!--
+        <menuitem name="List" id="training.menu_1_list" parent="training.menu_1"
+                  action="training.action_window"/>
+        <menuitem name="Server to list" id="training" parent="training.menu_2"
+                  action="training.action_server"/>
+        -->
+    </data>
+</odoo>

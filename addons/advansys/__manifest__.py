@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','report'],
 
     # always loaded
     'data': [
@@ -32,6 +32,7 @@
         'views/advansys_skills_view.xml',
         'views/advansys_project_view.xml',
         'views/advansys_student_view.xml',
+        'views/advansys_person_view.xml',
         'report/advansys_employee_report.xml',
         'report/employee_reports.xml',
     ],

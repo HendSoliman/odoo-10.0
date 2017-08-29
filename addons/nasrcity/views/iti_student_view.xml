@@ -34,9 +34,9 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name="name"/>
-                                <field name="age"/>
-                                <field name="track_id"
+                                <field name="name" String="الإسم"/>
+                                <field name="age" string="المجال"/>
+                                <field name="المؤهلات"
                                        attrs="{
                                    'invisible': [('age', '>', 25)],
                                    }"
@@ -79,7 +79,6 @@
                 </form>
             </field>
         </record>
-
         <record id="iti_student_action" model="ir.actions.act_window">
             <field name="name">ITI Student</field>
             <field name="res_model">iti.student</field>
@@ -113,7 +112,6 @@
                 </form>
             </field>
         </record>
-
         <record id="iti_track_action" model="ir.actions.act_window">
             <field name="name">ITI Student</field>
             <field name="res_model">iti.track</field>
@@ -134,5 +132,7 @@
                   name="Tracks"
                   parent="iti_data_menu"
                   action="iti_track_action"/>
+
+
     </data>
 </odoo>
