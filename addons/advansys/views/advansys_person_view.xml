@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+        <!--=========================Action==================-->
+
+        <record id="advansys_person_action" model="ir.actions.act_window">
+            <field name="name">Advansys Window</field>
+            <field name="res_model">advansys.person</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="advansys_person_tree_view" model="ir.ui.view">
+            <field name="name">Advansys person Tree View</field>
+            <field name="model">advansys.person</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Stu Name"/>
+                    <field name="barcode" string="Stu gender"/>
+                </tree>
+
+            </field>
+        </record>
+
+        <record id="advansys_studen_form_view" model="ir.ui.view">
+            <field name="name">Advansys person form View</field>
+            <field name="model">advansys.person</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name" string="Person Name"/>
+
+                        <field name="barcode" string="Barcoe"/>
+                    </group>
+                </form>
+
+            </field>
+        </record>
+
+
+        <!--==============Menu Item =================-->
+        <menuitem id="advansys_person_menu"
+                  name="person Courses"
+                  parent="advansys_Comunnity_menu"
+                  action="advansys_person_action"/>
+
+    </data>
+
+</odoo>

@@ -4,12 +4,12 @@
 
     <record model="hr.recruitment.stage" id="stage_job1">
         <field name="name">Initial Qualification</field>
-        <field name="sequence">1</field>
+        <field name="sequence">2</field>
     </record>
     <record model="hr.recruitment.stage" id="stage_job2">
         <field name="name">First Interview</field>
         <field name="template_id" ref="email_template_data_applicant_interest"/>
-        <field name="sequence">2</field>
+        <field name="sequence">1</field>
     </record>
     <record model="hr.recruitment.stage" id="stage_job3">
         <field name="name">Second Interview</field>

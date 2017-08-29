@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+
+        <record id="insert_data_into_employee" model="training.employee">
+            <field name="name">Noura</field>
+            <field name="age">25</field>
+        </record>
+        <record id="insert_data_into_employee2" model="training.employee">
+            <field name="name">Mahmoud</field>
+            <field name="age">25</field>
+        </record>
+    </data>
+</odoo>

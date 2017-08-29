@@ -73,7 +73,6 @@
             <field name="name">Advansys Employees Tree View</field>
             <field name="model">advansys.employee</field>
             <field name="arch" type="xml">
-
                 <tree>
                     <field name="name" string="Employee Name"/>
                     <field name="departmen_id" string="Department Name"/>
@@ -84,7 +83,6 @@
                     <field name="join_data"/>
 
                 </tree>
-
             </field>
         </record>
         <!--Form View  For Employees-->
@@ -95,6 +93,7 @@
                 <form>
                     <header>
 
+                        <!--clickable="True"-->
                         <button type="object"
                                 name="change_state"
                                 string="Pass IQ"
@@ -123,14 +122,13 @@
 
 
                         <!--====================Action button================-->
-               <field name="state" string="Work flow" widget="statusbar"/>
+                        <field name="state" string="Work flow" widget="statusbar" clickable="True"/>
 
 
                     </header>
                     <sheet>
                         <field name="image" widget="image" class="oe_avatar"
                                options="{&quot;preview_image&quot;:&quot;image_medium&quot;}"/>
-
                         <div class="oe_title">
                             <label for="name" class="oe_edit_only"/>
                             <h1>
@@ -178,7 +176,7 @@
                         </group>
                         <separator string="projects"/>
                         <group name="projects">
-                            <field name="project_ids" string="Projects" />
+                            <field name="project_ids" string="Projects"/>
                         </group>
 
                         <!--Tap-->
@@ -191,10 +189,8 @@
                                     </tree>
                                     <form>
                                         <field name="skill_id" string="Skill Name"/>
-
                                         <field name="level" string="Level"/>
                                     </form>
-
                                 </field>
                             </page>
 
